@@ -24,10 +24,17 @@ and what you should write is the sayHi function that makes the code above work,
 
 
 
-  //Code Here for first
   
+  
+var first = function(names, callback) {
+  firstName = names[0];
+  callback(firstName);
+}  
+
+//Code above for first
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
 first(names, function(firstName){
   console.log('The first name in names is ' + firstName)
 });
@@ -39,7 +46,14 @@ first(names, function(firstName){
 
 
 
-  //Code Here for last
+
+  
+var last = function(names, callback) {
+  lastName = names[names.length-1];
+  callback(lastName);
+}  
+
+  //Code above for last
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -54,14 +68,17 @@ last(names, function(lastName){
 
 
 
+var multiply = function (number1, number2, callback) {
+  var answer = (number1 * number2);
+  callback(answer);
+};
 
 
-
-  //Code Here for multiply
+  //Code above for multiply
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
-})
+});
 
 
 
@@ -71,9 +88,16 @@ multiply(4, 3, function(answer){
 
 
 
+var contains = function(array, firstName, callback) {
+  var result;
+  if (array.indexOf(firstName)) {
+      result = true;
+    }
+  callback(result);
+  
+};
 
-
-  //Code Here for contains
+  //Code above for contains
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
@@ -91,9 +115,17 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+var uniq = function(arr, callback) {var uniq = function(arr, callback) {
+  var uniqArray = [];
+    for (var i = 0; i < arr.length; i++) {
+     if (arr.indexOf(arr[i]) === i) {
+       uniqArray.push(arr[i]); 
+     }
+    }  
+  callback(uniqArray);
+};
 
-
-    //Code Here for uniq
+    //Code above for uniq
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
@@ -107,9 +139,14 @@ uniq(names, function(uniqArr){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+var each = function(arr, callback) {
+  var indice = 4;
+  var item = arr[indice];
+  callback(item, indice);
+};
 
 
-    //Code Here for each
+    //Code above for each
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -123,10 +160,19 @@ each(names, function(item, indice){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+var getUserById = function(arr, id, callback) { 
+  var user;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === id) {
+      user = arr[i];
+    } 
+  }   
+  callback(user);
+};
 
 
 
- //code here for getUserById
+ //code above for getUserById
 
 var users = [
   {
